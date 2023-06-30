@@ -11,21 +11,21 @@ public class Task_2 {
         System.out.println(check(text_1));
     }
 
-    public static boolean check(String str) {
+    public static boolean check(String s) {
         Deque<Character> list = new LinkedList<>();
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == "(" ||
-                    str.charAt(i) == "{" ||
-                    str.charAt(i) == "[")
-                list.add(str.charAt(i));
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == "(" ||
+                    s.charAt(i) == "{" ||
+                    s.charAt(i) == "[")
+                list.add(s.charAt(i));
             else {
                 if (list.isEmpty())
                     return false;
-                else if (str.charAt(i) == ")" && list.getLast().equals("("))
+                else if (s.charAt(i) == ")" && list.getLast().equals("("))
                     list.pollLast();
-                else if (str.charAt(i) == "}" && list.getLast().equals("{"))
+                else if (s.charAt(i) == "}" && list.getLast().equals("{"))
                     list.pollLast();
-                else if (str.charAt(i) == "]" && list.getLast().equals("["))
+                else if (s.charAt(i) == "]" && list.getLast().equals("["))
                     list.pollLast();
                 else
                     return false;
